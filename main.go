@@ -102,7 +102,7 @@ func main() {
 							mapping[row[1]] = 1
 						}
 						mapping[row[1]] = mapping[row[1]] + 1
-						continue
+						break
 					}
 				}
 			}
