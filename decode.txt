@@ -1,0 +1,70 @@
+1	base_fire_damage_resistance_%
+2	base_life_leech_from_attack_damage_permyriad
+3	base_max_fortification
+4	base_self_critical_strike_multiplier_-%
+5	base_strength
+6	base_stun_duration_+%
+7	base_stun_threshold_reduction_+%
+8	burn_damage_+%
+9	chance_to_deal_double_damage_%
+10	chance_to_intimidate_on_hit_%
+11	endurance_charge_on_kill_%
+12	faster_burn_%
+13	life_regeneration_rate_per_minute_%
+14	maximum_life_+%
+15	melee_critical_strike_chance_+%
+16	melee_damage_+%
+17	melee_weapon_critical_strike_multiplier_+
+18	physical_damage_%_to_add_as_fire
+19	physical_damage_+%
+20	physical_damage_reduction_rating_+%
+21	physical_damage_taken_%_as_fire
+22	strength_+%
+23	summon_totem_cast_speed_+%
+24	totem_damage_+%
+25	warcry_buff_effect_+%
+26	Axiom Warden
+27	Baleful Augmentation
+28	Bloody Flowers' Rebellion
+29	Brutal Execution
+30	Chitus' Heart
+31	City Walls
+32	Crematorium Worker
+33	Dialla's Wit
+34	Discerning Taste
+35	Eternal Adaptiveness
+36	Eternal Bloodlust
+37	Eternal Dominance
+38	Eternal Exploitation
+39	Eternal Fervour
+40	Eternal Fortitude
+41	Eternal Resilience
+42	Eternal Separation
+43	Eternal Subjugation
+44	Flawless Execution
+45	Freshly Brewed
+46	Gemling Ambush
+47	Gemling Inquisition
+48	Gemling Training
+49	Geofri's End
+50	Gleaming Legion
+51	Laureate
+52	Lioneye's Focus
+53	Night of a Thousand Ribbons
+54	Pooled Resources
+55	Purity Rebel
+56	Rigwald's Might
+57	Rites of Lunaris
+58	Rites of Solaris
+59	Robust Diet
+60	Rural Life
+61	Sceptre Pinnacle
+62	Secret Tunnels
+63	Shadowy Streets
+64	Slum Lord
+65	Street Urchin
+66	Superiority
+67	Virtue Gem Surgery
+68	Voll's Coup
+69	War Games
+70	With Eyes Open

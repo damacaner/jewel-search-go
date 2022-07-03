@@ -1,4 +1,11 @@
-# anus-blaster-5600
-upgraded version of anus blaster 3400
+# timeless
 
-[always dreaming, sinking deeper](https://www.youtube.com/watch?v=HxXsnFTVR6M)
+data taken from:
+https://github.com/KeshHere/TimelessJewelData
+
+for each jewel and each seed:
+list of permutations of 543 notables (list in notables.txt) into new constructs (reference in decode.txt)
+
+example:
+Elegant Hubris,2000,36,......
+position 1 (Lava Lash in notables.txt) transforms into code 36 (Eternal Bloodlust in decode.txt)

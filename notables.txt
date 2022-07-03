@@ -1,0 +1,543 @@
+1	Lava Lash
+2	Whirling Barrier
+3	Sanctuary
+4	Smashing Strikes
+5	Skull Cracking
+6	Bone Breaker
+7	Spiked Bulwark
+8	Hatchet Master
+9	Slaughter
+10	Born to Fight
+11	Stamina
+12	Endurance
+13	Vigour
+14	Lust for Carnage
+15	Blunt Trauma
+16	Fending
+17	Bloodless
+18	Eagle Eye
+19	Warrior's Blood
+20	Arcing Blows
+21	Fusillade
+22	Static Blows
+23	Wandslinger
+24	Elder Power
+25	Nightstalker
+26	Flaying
+27	Claws of the Magpie
+28	Claws of the Falcon
+29	Grave Intentions
+30	Death Attunement
+31	Overcharge
+32	Mind Drinker
+33	Heart of Thunder
+34	Lightning Walker
+35	Fire Walker
+36	Arsonist
+37	Fingers of Frost
+38	Frost Walker
+39	Heart of Ice
+40	Holy Fire
+41	Arcane Potency
+42	Amplify
+43	Deep Thoughts
+44	Nimbleness
+45	Vampirism
+46	Fangs of Frost
+47	Wrecking Ball
+48	One With Nature
+49	Adder's Touch
+50	Blade Master
+51	Poisonous Fangs
+52	From the Shadows
+53	Life Raker
+54	Intuition
+55	Heavy Draw
+56	Hunter's Gambit
+57	Fervour
+58	Frenetic
+59	Savagery
+60	King of the Hill
+61	Herbalism
+62	Mana Flows
+63	Heart of Oak
+64	Weathered Hunter
+65	Depth Perception
+66	Acuity
+67	Ballistics
+68	Executioner
+69	Cleaving
+70	Blood Siphon
+71	Weapon Artistry
+72	Ambidexterity
+73	Heartseeker
+74	Razor's Edge
+75	Aspect of the Eagle
+76	Butchery
+77	Destroyer
+78	Brutal Blade
+79	Lethality
+80	Master Fletcher
+81	Testudo
+82	Blade Barrier
+83	Crystal Skin
+84	Diamond Skin
+85	Arcane Focus
+86	Instability
+87	Infused
+88	Disemboweling
+89	Divine Fervour
+90	Throatseeker
+91	Prowess
+92	Beef
+93	Physique
+94	Master of the Arena
+95	Heart of the Warrior
+96	Art of the Gladiator
+97	Agility
+98	Alacrity
+99	Precision
+100	Proficiency
+101	Expertise
+102	Ancestral Knowledge
+103	Deep Wisdom
+104	Arcanist's Dominion
+105	Thief's Craft
+106	Wisdom of the Glade
+107	Holy Dominion
+108	Galvanic Hammer
+109	Hard Knocks
+110	Coordination
+111	Finesse
+112	Presage
+113	Might
+114	Dervish
+115	Berserking
+116	Twin Terrors
+117	Doom Cast
+118	Trickery
+119	Sleight of Hand
+120	Savage Wounds
+121	Golem's Blood
+122	Reflexes
+123	Swagger
+124	Heart of Flame
+125	Revenge of the Hunted
+126	Blast Radius
+127	Lord of the Dead
+128	Gravepact
+129	Fury Bolts
+130	Versatility
+131	Sacrifice
+132	Thick Skin
+133	Written in Blood
+134	Cruel Preparation
+135	Faith and Steel
+136	Whispers of Doom
+137	Devotion
+138	Discipline and Training
+139	Leadership
+140	Unnatural Calm
+141	Purity of Flesh
+142	Coldhearted Calculation
+143	Fangs of the Viper
+144	Assassination
+145	Soul of Steel
+146	Void Barrier
+147	Cloth and Chain
+148	Serpent Stance
+149	Primal Spirit
+150	Shamanistic Fury
+151	Ironwood
+152	Primal Manifestation
+153	Totemic Zeal
+154	Volatile Mines
+155	Master Sapper
+156	High Explosives
+157	Clever Construction
+158	Saboteur
+159	Path of the Warrior
+160	Path of the Savant
+161	Path of the Hunter
+162	Shaper
+163	Sentinel
+164	Harrier
+165	Essence Infusion
+166	Influence
+167	Charisma
+168	Sovereignty
+169	Entropy
+170	One with Evil
+171	Corruption
+172	Decay Ward
+173	Strong Arm
+174	Goliath
+175	Soul Siphon
+176	Clever Thief
+177	Blood Drinker
+178	Heart and Soul
+179	Annihilation
+180	Prism Weave
+181	Skittering Runes
+182	Hex Master
+183	Practical Application
+184	Piercing Shots
+185	Essence Surge
+186	Survivalist
+187	Constitution
+188	Foresight
+189	Druidic Rite
+190	Forces of Nature
+191	Fatal Blade
+192	Revelry
+193	Avatar of the Hunt
+194	Ash, Frost and Storm
+195	Mental Rapidity
+196	Quick Recovery
+197	Combat Stamina
+198	Martial Experience
+199	Dynamo
+200	Battle Rouse
+201	Exceptional Performance
+202	Command of Steel
+203	Arcane Chemistry
+204	Profane Chemistry
+205	Master of Blades
+206	Hired Killer
+207	Thrill Killer
+208	Dreamer
+209	Melding
+210	True Strike
+211	Potency of Will
+212	Champion of the Cause
+213	Quickstep
+214	Ribcage Crusher
+215	Breath of Flames
+216	Breath of Lightning
+217	Breath of Rime
+218	Tempest Blast
+219	Bravery
+220	Defiance
+221	Retribution
+222	Sanctity
+223	Light of Divinity
+224	Righteous Decree
+225	Robust
+226	Barbarism
+227	Juggernaut
+228	Retaliation
+229	Storm Weaver
+230	Blade of Cunning
+231	Tireless
+232	Sanctum of Thought
+233	Bloodletting
+234	Flash Freeze
+235	Graceful Assault
+236	Hematophagy
+237	Spirit Void
+238	Essence Sap
+239	Vitality Void
+240	Rampart
+241	Explosive Elements
+242	Shaman's Dominion
+243	Explosive Impact
+244	Crackling Speed
+245	Snowforged
+246	Unstoppable
+247	Unbreakable
+248	Unyielding
+249	Undeniable
+250	Unflinching
+251	Unrelenting
+252	War Bringer
+253	Rite of Ruin
+254	Defy Pain
+255	Flawless Savagery
+256	Crave the Slaughter
+257	Aspect of Carnage
+258	Blitz
+259	Arohongui, Moon's Presence
+260	Ngamahu, Flame's Advance
+261	Hinekora, Death's Fury
+262	Tasalio, Cleansing Water
+263	Tukohama, War's Herald
+264	Tawhoa, Forest's Strength
+265	Ramako, Sun's Light
+266	Valako, Storm's Embrace
+267	Way of the Poacher
+268	Avatar of the Slaughter
+269	Rapid Assault
+270	Avatar of the Chase
+271	Quartz Infusion
+272	Avatar of the Veil
+273	Focal Point
+274	Ricochet
+275	Endless Munitions
+276	Far Shot
+277	Rupturing
+278	Gathering Winds
+279	Occupying Force
+280	Wind Ward
+281	Nature's Adrenaline
+282	Master Surgeon
+283	Nature's Boon
+284	Master Alchemist
+285	Veteran Bowyer
+286	Nature's Reprisal
+287	Master Toxicist
+288	Profane Bloom
+289	Malediction
+290	Vile Bastion
+291	Void Beacon
+292	Forbidden Power
+293	Withering Presence
+294	Frigid Wake
+295	Liege of the Primordial
+296	Mastermind of Discord
+297	Heart of Destruction
+298	Bastion of Elements
+299	Elemancer
+300	Shaper of Flames
+301	Shaper of Storms
+302	Shaper of Winter
+303	Mindless Aggression
+304	Unnatural Strength
+305	Bone Barrier
+306	Mistress of Sacrifice
+307	Essence Glutton
+308	Commander of Darkness
+309	Plaguebringer
+310	Corpse Pact
+311	Headsman
+312	Overwhelm
+313	Bane of Legends
+314	Endless Hunger
+315	Brutal Fervour
+316	Impact
+317	Masterful Form
+318	Gratuitous Violence
+319	Blood in the Eyes
+320	Outmatch and Outlast
+321	Painforged
+322	Violent Retaliation
+323	Reigning Veteran
+324	Arena Challenger
+325	Fortitude
+326	Unstoppable Hero
+327	Conqueror
+328	Worthy Foe
+329	Inspirational
+330	First to Strike, Last to Fall
+331	Master of Metal
+332	Righteous Providence
+333	Inevitable Judgement
+334	Augury of Penitence
+335	Sanctuary
+336	Pious Path
+337	Instruments of Zeal
+338	Instruments of Virtue
+339	Divine Guidance
+340	Sanctuary of Thought
+341	Pursuit of Faith
+342	Ritual of Awakening
+343	Conviction of Power
+344	Illuminated Devotion
+345	Arcane Blessing
+346	Sign of Purpose
+347	Time of Need
+348	Radiant Faith
+349	Bastion of Hope
+350	Harmony of Purpose
+351	Unwavering Faith
+352	Radiant Crusade
+353	Unwavering Crusade
+354	Unstable Infusion
+355	Deadly Infusion
+356	Ambush and Assassinate
+357	Opportunistic
+358	Toxic Delivery
+359	Noxious Strike
+360	Mistwalker
+361	Swift Killer
+362	Patient Reaper
+363	Heartstopper
+364	Escape Artist
+365	Prolonged Pain
+366	Weave the Arcane
+367	Harness the Void
+368	Pyromaniac
+369	Born in the Shadows
+370	Explosives Expert
+371	Bomb Specialist
+372	Perfect Crime
+373	Demolitions Specialist
+374	Chain Reaction
+375	Will of Blades
+376	Path of the Ranger
+377	Path of the Witch
+378	Path of the Marauder
+379	Path of the Duelist
+380	Path of the Shadow
+381	Path of the Templar
+382	Marauder Ascendancy
+383	Ranger Ascendancy
+384	Witch Ascendancy
+385	Duelist Ascendancy
+386	Templar Ascendancy
+387	Shadow Ascendancy
+388	Growth and Decay
+389	Atrophy
+390	Force Shaper
+391	Aspect of the Lynx
+392	Fatal Toxins
+393	Elemental Focus
+394	Unstable Munitions
+395	Hasty Reconstruction
+396	Expeditious Munitions
+397	Destructive Apparatus
+398	Overcharged
+399	Winter Spirit
+400	Primeval Force
+401	Insightfulness
+402	Counterweight
+403	Dirty Techniques
+404	Toxic Strikes
+405	Cannibalistic Rite
+406	Devastating Devices
+407	Righteous Army
+408	Spiritual Command
+409	Redemption
+410	Spiritual Aid
+411	Admonisher
+412	Natural Authority
+413	Arcane Will
+414	Runesmith
+415	Explosive Runes
+416	Ethereal Feast
+417	Light Eater
+418	Taste for Blood
+419	Tolerance
+420	Divine Judgement
+421	Divine Fury
+422	Divine Wrath
+423	Resourcefulness
+424	Soul Thief
+425	Mysticism
+426	Dark Arts
+427	Enigmatic Defence
+428	Enigmatic Reach
+429	Arcane Guarding
+430	Arcane Sanctuary
+431	Arcane Expanse
+432	Swift Venoms
+433	Gladiator's Perseverance
+434	Brinkmanship
+435	Fleetfoot
+436	Silent Steps
+437	Freedom of Movement
+438	Inexorable
+439	Adamant
+440	Dismembering
+441	Steadfast
+442	Season of Ice
+443	Inveterate
+444	Merciless Skewering
+445	Forceful Skewering
+446	Magmatic Strikes
+447	Dazzling Strikes
+448	Disciple of the Slaughter
+449	Disciple of the Unyielding
+450	Longshot
+451	Utmost Swiftness
+452	Utmost Might
+453	Utmost Intellect
+454	Prismatic Skin
+455	Feller of Foes
+456	Pain Forger
+457	Courage
+458	Blacksmith's Clout
+459	Spinecruncher
+460	Entrench
+461	Bladedancer
+462	Farsight
+463	Claws of the Hawk
+464	Backstabbing
+465	Wasting
+466	Disintegration
+467	Titanic Impacts
+468	Kinetic Impacts
+469	Aggressive Bastion
+470	Safeguard
+471	Warrior Training
+472	Steelwood Stance
+473	One with the River
+474	Deadly Draw
+475	Arcane Capacitor
+476	Carrion
+477	Disciple of the Forbidden
+478	Prodigal Perfection
+479	Mystic Bulwark
+480	Essence Extraction
+481	Ravenous Horde
+482	Enduring Bond
+483	Fearsome Force
+484	Indomitable Army
+485	Inspiring Bond
+486	Golem Commander
+487	Field Medicine
+488	Blast Waves
+489	Successive Detonations
+490	Efficient Explosives
+491	Searing Heat
+492	Dire Torment
+493	Watchtowers
+494	Surveillance
+495	Panopticon
+496	Powerful Bond
+497	Burning Brutality
+498	Deep Breaths
+499	Measured Fury
+500	Unfaltering
+501	Discord Artisan
+502	Adjacent Animosity
+503	Window of Opportunity
+504	Undertaker
+505	Bannerman
+506	Instinct
+507	Assured Strike
+508	Anointed Flesh
+509	Harpooner
+510	Serpentine Spellslinger
+511	Forethought
+512	Infused Flesh
+513	Brand Equity
+514	Trick Shot
+515	Split Shot
+516	Deflection
+517	Replenishing Remedies
+518	Acrimony
+519	Harvester of Foes
+520	Malicious Intent
+521	Marked for Death
+522	Mark the Prey
+523	Hearty
+524	Vanquisher
+525	Relentless
+526	Veteran Soldier
+527	Asylum
+528	Careful Conservationist
+529	Natural Remedies
+530	Bastion Breaker
+531	Way of the Warrior
+532	Deadly Inclinations
+533	Mystic Talents
+534	Heart of Darkness
+535	Vengeant Cascade
+536	Tribal Fury
+537	Tenacity
+538	Tranquility
+539	Crusader
+540	Persistence
+541	Hardened Scars
+542	Cleansed Thoughts
+543	Aspect of Stone
