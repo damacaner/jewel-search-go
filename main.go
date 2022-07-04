@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"regexp"
 	"strconv"
 	"time"
@@ -14,12 +15,15 @@ import (
 func main() {
 	reg, err := regexp.Compile("[^a-zA-Z]+")
 	regnum, err := regexp.Compile("[^0-9]+")
+	var root string
 	var seedcnt int
 	var notable string
+	var notablefile *os.File
 	var seedfile *os.File
 	var nodesearched string
 	var scanner *bufio.Scanner
 	var decoderoption int
+	var decodefile *os.File
 	var data [][]string
 	var notablecount int
 	type mapping map[string]int
@@ -29,6 +33,13 @@ func main() {
 	var mapping2d []mapping
 	var notableamount []string
 	var decoder = make(map[string]int)
+	var elegantseedpath string
+	var lethalseedpath string
+	root, err = os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// Ask user to enter a desired notable amount to search and store every notable in a different value
 	fmt.Println("Enter a notable amount to search:")
 	fmt.Println("Minimum 4 is recommended, as search is not showing anything lower than 3.")
@@ -47,13 +58,50 @@ func main() {
 		// Append notable to array
 		notableamount = append(notableamount, notable)
 	}
-	notablefile, err := os.Open("notables.txt")
+	err = filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			return nil
+		}
+		// Check if file name is notables.txt
+		if filepath.Base(path) == "notables.txt" {
+			// Open file
+			notablefile, err = os.Open(path)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+		// Check if file name is decode.txt
+		if filepath.Base(path) == "decode.txt" {
+			// Open file
+			decodefile, err = os.Open(path)
+			if err != nil {
+				log.Fatal(err)
+			}
+
+		}
+		// Check if file name is Lethal Pride seeds.csv
+		if filepath.Base(path) == "Lethal Pride seeds.csv" {
+			// Store the path in lethalseedpath
+			lethalseedpath = path
+		}
+		// Check if file name is Elegant Hubris seeds.csv
+		if filepath.Base(path) == "Elegant Hubris seeds.csv" {
+			// Store the path in elegantseedpath
+			elegantseedpath = path
+		}
+		return nil
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println("Enter if you want to search lethal pride or elegant hubris nodes:")
 	fmt.Println("1. Lethal Pride")
 	fmt.Println("2. Elegant Hubris")
 	fmt.Scanln(&decoderoption)
 	timenow := time.Now()
-	decodefile, err := os.Open("decode.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -99,12 +147,12 @@ func main() {
 		}
 	}
 	if decoderoption == 2 {
-		seedfile, err = os.Open("Elegant Hubris seeds.csv")
+		seedfile, err = os.Open(elegantseedpath)
 		if err != nil {
 			panic(err)
 		}
 	} else if decoderoption == 1 {
-		seedfile, err = os.Open("Lethal Pride seeds.csv")
+		seedfile, err = os.Open(lethalseedpath)
 		if err != nil {
 			panic(err)
 		}
@@ -182,6 +230,6 @@ func main() {
 		}
 		totalcnt = 0
 	}
-	fmt.Println("Only showing the seeds that higher than 3 occurences, if you dont see anything, then it doesnt exist.")
+	fmt.Println("Only showing the seeds that higher than 3 occurences in the seeds.txt, if you dont see anything, then it doesnt exist.")
 	fmt.Println("Time taken:", time.Since(timenow))
 }
