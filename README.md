@@ -8,4 +8,6 @@ Enter the notable size you want to search, enter the notables, enter the Lethal 
 
 Will update with Elegant Hubris, but as I said I just posted this for people want to build a search engine like this in Go, so they could take my code and build something better.
 
+I almost forgot, special thanks to @xeske for compressing CSV files! 
+https://github.com/xeske/timeless
 
