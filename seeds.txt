@@ -1,10 +1,36 @@
-Found seed: 0, Seed Number: 10136
-Found seed: 1, Seed Number: 14179
-Found seed: 2, Seed Number: 14376
-Found seed: 3, Seed Number: 15258
-Found seed: 4, Seed Number: 15674
-Found seed: 5, Seed Number: 17214
-Found seed: 6, Seed Number: 17382
-Found seed: 7, Seed Number: 17388
-Found seed: 8, Seed Number: 17594
-Found seed: 9, Seed Number: 17921
+Found seed: 0, Seed Number: 791, Frequency of the Main Node: 3 Nodes
+ Found seed: 1, Seed Number: 952, Frequency of the Main Node: 3 Nodes
+ Found seed: 2, Seed Number: 1077, Frequency of the Main Node: 3 Nodes
+ Found seed: 3, Seed Number: 1089, Frequency of the Main Node: 3 Nodes
+ Found seed: 4, Seed Number: 1120, Frequency of the Main Node: 3 Nodes
+ Found seed: 5, Seed Number: 1678, Frequency of the Main Node: 3 Nodes
+ Found seed: 6, Seed Number: 2155, Frequency of the Main Node: 3 Nodes
+ Found seed: 7, Seed Number: 2365, Frequency of the Main Node: 3 Nodes
+ Found seed: 8, Seed Number: 2747, Frequency of the Main Node: 3 Nodes
+ Found seed: 9, Seed Number: 3075, Frequency of the Main Node: 3 Nodes
+ Found seed: 10, Seed Number: 3149, Frequency of the Main Node: 3 Nodes
+ Found seed: 11, Seed Number: 3377, Frequency of the Main Node: 4 Nodes
+ Found seed: 12, Seed Number: 3451, Frequency of the Main Node: 3 Nodes
+ Found seed: 13, Seed Number: 3876, Frequency of the Main Node: 3 Nodes
+ Found seed: 14, Seed Number: 4239, Frequency of the Main Node: 3 Nodes
+ Found seed: 15, Seed Number: 4594, Frequency of the Main Node: 3 Nodes
+ Found seed: 16, Seed Number: 4878, Frequency of the Main Node: 3 Nodes
+ Found seed: 17, Seed Number: 4908, Frequency of the Main Node: 3 Nodes
+ Found seed: 18, Seed Number: 4921, Frequency of the Main Node: 3 Nodes
+ Found seed: 19, Seed Number: 5038, Frequency of the Main Node: 3 Nodes
+ Found seed: 20, Seed Number: 5086, Frequency of the Main Node: 3 Nodes
+ Found seed: 21, Seed Number: 5222, Frequency of the Main Node: 3 Nodes
+ Found seed: 22, Seed Number: 5246, Frequency of the Main Node: 3 Nodes
+ Found seed: 23, Seed Number: 5444, Frequency of the Main Node: 4 Nodes
+ Found seed: 24, Seed Number: 5648, Frequency of the Main Node: 3 Nodes
+ Found seed: 25, Seed Number: 5807, Frequency of the Main Node: 3 Nodes
+ Found seed: 26, Seed Number: 5831, Frequency of the Main Node: 3 Nodes
+ Found seed: 27, Seed Number: 6166, Frequency of the Main Node: 3 Nodes
+ Found seed: 28, Seed Number: 6383, Frequency of the Main Node: 3 Nodes
+ Found seed: 29, Seed Number: 6856, Frequency of the Main Node: 3 Nodes
+ Found seed: 30, Seed Number: 6960, Frequency of the Main Node: 3 Nodes
+ Found seed: 31, Seed Number: 7296, Frequency of the Main Node: 3 Nodes
+ Found seed: 32, Seed Number: 7591, Frequency of the Main Node: 3 Nodes
+ Found seed: 33, Seed Number: 7627, Frequency of the Main Node: 3 Nodes
+ Found seed: 34, Seed Number: 7880, Frequency of the Main Node: 3 Nodes
+ 

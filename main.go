@@ -35,6 +35,8 @@ func main() {
 	var decoder = make(map[string]int)
 	var elegantseedpath string
 	var lethalseedpath string
+	var brutalseedpath string
+	var militantseedpath string
 	root, err = os.Getwd()
 	if err != nil {
 		log.Fatal(err)
@@ -66,31 +68,46 @@ func main() {
 			return nil
 		}
 		// Check if file name is notables.txt
-		if filepath.Base(path) == "notables.txt" {
+		if info.Name() == "notables.txt" {
 			// Open file
 			notablefile, err = os.Open(path)
 			if err != nil {
 				log.Fatal(err)
 			}
+			return nil
 		}
 		// Check if file name is decode.txt
-		if filepath.Base(path) == "decode.txt" {
+		if info.Name() == "decode.txt" {
 			// Open file
 			decodefile, err = os.Open(path)
 			if err != nil {
 				log.Fatal(err)
 			}
-
+			return nil
 		}
 		// Check if file name is Lethal Pride seeds.csv
-		if filepath.Base(path) == "Lethal Pride seeds.csv" {
+		if info.Name() == "Lethal Pride seeds.csv" {
 			// Store the path in lethalseedpath
 			lethalseedpath = path
+			return nil
 		}
 		// Check if file name is Elegant Hubris seeds.csv
-		if filepath.Base(path) == "Elegant Hubris seeds.csv" {
+		if info.Name() == "Elegant Hubris seeds.csv" {
 			// Store the path in elegantseedpath
 			elegantseedpath = path
+			return nil
+		}
+		// Check if file name is Brutal Restraint seeds.csv
+		if info.Name() == "Brutal Restraint seeds.csv" {
+			// Store the path in lethalseedpath
+			brutalseedpath = path
+			return nil
+		}
+		// Check if file name is Militant Faith seeds.csv
+		if info.Name() == "Militant Faith seeds.csv" {
+			// Store the path in militantseedpath
+			militantseedpath = path
+			return nil
 		}
 		return nil
 	})
@@ -100,50 +117,31 @@ func main() {
 	fmt.Println("Enter if you want to search lethal pride or elegant hubris nodes:")
 	fmt.Println("1. Lethal Pride")
 	fmt.Println("2. Elegant Hubris")
+	fmt.Println("3. Brutal Restraint")
+	fmt.Println("4. Militant Faith")
 	fmt.Scanln(&decoderoption)
-	timenow := time.Now()
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("Enter the desired node without spaces and non-alphanumeric characters:")
 	fmt.Scanln(&nodesearched)
-	if decoderoption == 1 {
-		scannerdecode := bufio.NewScanner(decodefile)
-		for scannerdecode.Scan() {
-			decode := scannerdecode.Text()
-			reg, err := regexp.Compile("[^a-zA-Z]+")
-			if err != nil {
-				log.Fatal(err)
-			}
-			decodeCheck = reg.ReplaceAllString(decode, "")
-			// Check if decodeCheck is equal to lethalpridemod
-			if decodeCheck == nodesearched {
-				fmt.Println("Decode found!")
-				fmt.Println("Decode:", decode)
-				numbers := regnum.ReplaceAllString(decode, "")
-				numbers_integer, _ := strconv.Atoi(numbers)
-				decoder[decodeCheck] = numbers_integer
-				break
-			}
+	timenow := time.Now()
+	scannerdecode := bufio.NewScanner(decodefile)
+	for scannerdecode.Scan() {
+		decode := scannerdecode.Text()
+		reg, err := regexp.Compile("[^a-zA-Z]+")
+		if err != nil {
+			log.Fatal(err)
 		}
-	} else if decoderoption == 2 {
-		scannerdecode := bufio.NewScanner(decodefile)
-		for scannerdecode.Scan() {
-			decode := scannerdecode.Text()
-			reg, err := regexp.Compile("[^a-zA-Z]+")
-			if err != nil {
-				log.Fatal(err)
-			}
-			decodeCheck = reg.ReplaceAllString(decode, "")
-			// Check if decodeCheck is equal to lethalpridemod
-			if decodeCheck == nodesearched {
-				fmt.Println("Decode found!")
-				fmt.Println("Decode:", decode)
-				numbers := regnum.ReplaceAllString(decode, "")
-				numbers_integer, _ := strconv.Atoi(numbers)
-				decoder[decodeCheck] = numbers_integer
-				break
-			}
+		decodeCheck = reg.ReplaceAllString(decode, "")
+		// Check if decodeCheck is equal to the desired mod
+		if decodeCheck == nodesearched {
+			fmt.Println("Decode found!")
+			fmt.Println("Decode:", decode)
+			numbers := regnum.ReplaceAllString(decode, "")
+			numbers_integer, _ := strconv.Atoi(numbers)
+			decoder[decodeCheck] = numbers_integer
+			break
 		}
 	}
 	if decoderoption == 2 {
@@ -156,6 +154,20 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
+	} else if decoderoption == 3 {
+		seedfile, err = os.Open(brutalseedpath)
+		if err != nil {
+			panic(err)
+		}
+	} else if decoderoption == 4 {
+		seedfile, err = os.Open(militantseedpath)
+		if err != nil {
+			panic(err)
+		}
+
+	} else {
+		fmt.Println("Please enter a valid option.")
+		os.Exit(1)
 	}
 	csv_reader := csv.NewReader(seedfile)
 	data, err = csv_reader.ReadAll()
@@ -180,14 +192,18 @@ func main() {
 				if err != nil {
 					log.Fatal(err)
 				}
-				// Search the processedString in the data
-				// Search the processedString in the Lethal pride seeds.csv file
-				if decoderoption == 1 {
-					appendamount = 30000
+				if decoderoption == 1 { // Maximum of 18000 jewel numbers in Lethal Pride
+					appendamount = 18100
 				}
-				if decoderoption == 2 {
-					appendamount = 170000
+				if decoderoption == 2 { // Maximum of 160000 jewel numbers in Elegant Hubris
+					appendamount = 170100
 				}
+				if decoderoption == 3 { // Maximum of 8000 jewel numbers in Brutal Restraint
+					appendamount = 8100
+				}
+				if decoderoption == 4 { // Maximum of 11000 jewel numbers in Militant Faith
+					appendamount = 11100
+				} // Extra 100 appends are failsafe fallacy.
 				for i := 0; i < appendamount; i++ {
 					// Append dummy value to mapping2d
 					mapping2d = append(mapping2d, make(mapping))
@@ -225,7 +241,7 @@ func main() {
 			}
 		}
 		if totalcnt >= 3 {
-			fmt.Fprintf(file, "Found seed: %d, Seed Number: %d\n", seedcnt, i)
+			fmt.Fprintf(file, "Found seed: %d, Seed Number: %d, Frequency of the Main Node: %d Nodes\n ", seedcnt, i, totalcnt)
 			seedcnt++
 		}
 		totalcnt = 0
