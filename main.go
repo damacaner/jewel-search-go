@@ -14,12 +14,18 @@ import (
 func main() {
 	reg, err := regexp.Compile("[^a-zA-Z]+")
 	regnum, err := regexp.Compile("[^0-9]+")
+	var seedcnt int
 	var notable string
+	var seedfile *os.File
 	var nodesearched string
 	var scanner *bufio.Scanner
+	var decoderoption int
 	var data [][]string
 	var notablecount int
 	type mapping map[string]int
+	var decodeCheck string
+	var totalcnt int
+	var appendamount int
 	var mapping2d []mapping
 	var notableamount []string
 	var decoder = make(map[string]int)
@@ -33,11 +39,11 @@ func main() {
 	}
 	for i := 0; i < notablecount; i++ {
 		// Take an user oinput for notable
-		fmt.Printf("Enter notable %d> ", i)
+		fmt.Printf("Enter %d. notable without spaces and non-alphanumeric characters > ", i)
 		// Scan notable with buffer
-		scanner := bufio.NewScanner(os.Stdin)
-		scanner.Scan()
-		notable = scanner.Text()
+		scannernotables := bufio.NewScanner(os.Stdin)
+		scannernotables.Scan()
+		notable = scannernotables.Text()
 		// Append notable to array
 		notableamount = append(notableamount, notable)
 	}
@@ -45,7 +51,6 @@ func main() {
 	fmt.Println("Enter if you want to search lethal pride or elegant hubris nodes:")
 	fmt.Println("1. Lethal Pride")
 	fmt.Println("2. Elegant Hubris")
-	var decoderoption int
 	fmt.Scanln(&decoderoption)
 	timenow := time.Now()
 	decodefile, err := os.Open("decode.txt")
@@ -54,7 +59,6 @@ func main() {
 	}
 	fmt.Println("Enter the desired node without spaces and non-alphanumeric characters:")
 	fmt.Scanln(&nodesearched)
-	var decodeCheck string
 	if decoderoption == 1 {
 		scannerdecode := bufio.NewScanner(decodefile)
 		for scannerdecode.Scan() {
@@ -74,17 +78,6 @@ func main() {
 				break
 			}
 		}
-		seedfile, err := os.Open("Lethal Pride seeds.csv")
-		if err != nil {
-			panic(err)
-		}
-		csv_reader := csv.NewReader(seedfile)
-		data, err = csv_reader.ReadAll()
-		if err != nil {
-			panic(err)
-		}
-		// Scan the lines of notablefile
-		scanner = bufio.NewScanner(notablefile)
 	} else if decoderoption == 2 {
 		scannerdecode := bufio.NewScanner(decodefile)
 		for scannerdecode.Scan() {
@@ -104,18 +97,24 @@ func main() {
 				break
 			}
 		}
-		seedfile, err := os.Open("Elegant Hubris seeds.csv")
-		if err != nil {
-			panic(err)
-		}
-		csv_reader := csv.NewReader(seedfile)
-		data, err = csv_reader.ReadAll()
-		if err != nil {
-			panic(err)
-		}
-		// Scan the lines of notablefile
-		scanner = bufio.NewScanner(notablefile)
 	}
+	if decoderoption == 2 {
+		seedfile, err = os.Open("Elegant Hubris seeds.csv")
+		if err != nil {
+			panic(err)
+		}
+	} else if decoderoption == 1 {
+		seedfile, err = os.Open("Lethal Pride seeds.csv")
+		if err != nil {
+			panic(err)
+		}
+	}
+	csv_reader := csv.NewReader(seedfile)
+	data, err = csv_reader.ReadAll()
+	if err != nil {
+		panic(err)
+	}
+	scanner = bufio.NewScanner(notablefile)
 	for scanner.Scan() {
 		notable = scanner.Text() // Scan the words of notables
 		// Trim non-alphanumeric characters
@@ -135,7 +134,6 @@ func main() {
 				}
 				// Search the processedString in the data
 				// Search the processedString in the Lethal pride seeds.csv file
-				var appendamount int
 				if decoderoption == 1 {
 					appendamount = 30000
 				}
@@ -169,14 +167,20 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
+	defer file.Close()
+	totalcnt = 0
+	seedcnt = 0
 	for i := range mapping2d {
 		for jewel := range mapping2d[i] {
-			if mapping2d[i][jewel] >= 3 {
-				fmt.Fprintf(file, "%d", i)
-				// 	Print to console
-				fmt.Println(i, mapping2d[i][jewel])
+			if mapping2d[i][jewel] > 0 {
+				totalcnt++
 			}
 		}
+		if totalcnt >= 3 {
+			fmt.Fprintf(file, "Found seed: %d, Seed Number: %d\n", seedcnt, i)
+			seedcnt++
+		}
+		totalcnt = 0
 	}
 	fmt.Println("Only showing the seeds that higher than 3 occurences, if you dont see anything, then it doesnt exist.")
 	fmt.Println("Time taken:", time.Since(timenow))
