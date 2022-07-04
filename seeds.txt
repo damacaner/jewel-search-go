@@ -1,2 +1,10 @@
-%!s(int=16120),2
-%!s(int=16120),2
+Found seed: 0, Seed Number: 10136
+Found seed: 1, Seed Number: 14179
+Found seed: 2, Seed Number: 14376
+Found seed: 3, Seed Number: 15258
+Found seed: 4, Seed Number: 15674
+Found seed: 5, Seed Number: 17214
+Found seed: 6, Seed Number: 17382
+Found seed: 7, Seed Number: 17388
+Found seed: 8, Seed Number: 17594
+Found seed: 9, Seed Number: 17921
