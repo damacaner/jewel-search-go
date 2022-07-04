@@ -15,6 +15,9 @@ func main() {
 	reg, err := regexp.Compile("[^a-zA-Z]+")
 	regnum, err := regexp.Compile("[^0-9]+")
 	var notable string
+	var nodesearched string
+	var scanner *bufio.Scanner
+	var data [][]string
 	var notablecount int
 	type mapping map[string]int
 	var mapping2d []mapping
@@ -39,45 +42,80 @@ func main() {
 		notableamount = append(notableamount, notable)
 	}
 	notablefile, err := os.Open("notables.txt")
-	fmt.Println("Enter desired lethal pride seed:")
+	fmt.Println("Enter if you want to search lethal pride or elegant hubris nodes:")
+	fmt.Println("1. Lethal Pride")
+	fmt.Println("2. Elegant Hubris")
+	var decoderoption int
+	fmt.Scanln(&decoderoption)
 	timenow := time.Now()
 	decodefile, err := os.Open("decode.txt")
 	if err != nil {
 		panic(err)
 	}
-	lethal := bufio.NewScanner(os.Stdin)
-	lethal.Scan()
-	lethalpridemod := lethal.Text()
+	fmt.Println("Enter the desired node without spaces and non-alphanumeric characters:")
+	fmt.Scanln(&nodesearched)
 	var decodeCheck string
-	scannerdecode := bufio.NewScanner(decodefile)
-	for scannerdecode.Scan() {
-		decode := scannerdecode.Text()
-		reg, err := regexp.Compile("[^a-zA-Z]+")
+	if decoderoption == 1 {
+		scannerdecode := bufio.NewScanner(decodefile)
+		for scannerdecode.Scan() {
+			decode := scannerdecode.Text()
+			reg, err := regexp.Compile("[^a-zA-Z]+")
+			if err != nil {
+				log.Fatal(err)
+			}
+			decodeCheck = reg.ReplaceAllString(decode, "")
+			// Check if decodeCheck is equal to lethalpridemod
+			if decodeCheck == nodesearched {
+				fmt.Println("Decode found!")
+				fmt.Println("Decode:", decode)
+				numbers := regnum.ReplaceAllString(decode, "")
+				numbers_integer, _ := strconv.Atoi(numbers)
+				decoder[decodeCheck] = numbers_integer
+				break
+			}
+		}
+		seedfile, err := os.Open("Lethal Pride seeds.csv")
 		if err != nil {
-			log.Fatal(err)
+			panic(err)
 		}
-		decodeCheck = reg.ReplaceAllString(decode, "")
-		// Check if decodeCheck is equal to lethalpridemod
-		if decodeCheck == lethalpridemod {
-			fmt.Println("Decode found!")
-			fmt.Println("Decode:", decode)
-			numbers := regnum.ReplaceAllString(decode, "")
-			numbers_integer, _ := strconv.Atoi(numbers)
-			decoder[decodeCheck] = numbers_integer
-			break
+		csv_reader := csv.NewReader(seedfile)
+		data, err = csv_reader.ReadAll()
+		if err != nil {
+			panic(err)
 		}
+		// Scan the lines of notablefile
+		scanner = bufio.NewScanner(notablefile)
+	} else if decoderoption == 2 {
+		scannerdecode := bufio.NewScanner(decodefile)
+		for scannerdecode.Scan() {
+			decode := scannerdecode.Text()
+			reg, err := regexp.Compile("[^a-zA-Z]+")
+			if err != nil {
+				log.Fatal(err)
+			}
+			decodeCheck = reg.ReplaceAllString(decode, "")
+			// Check if decodeCheck is equal to lethalpridemod
+			if decodeCheck == nodesearched {
+				fmt.Println("Decode found!")
+				fmt.Println("Decode:", decode)
+				numbers := regnum.ReplaceAllString(decode, "")
+				numbers_integer, _ := strconv.Atoi(numbers)
+				decoder[decodeCheck] = numbers_integer
+				break
+			}
+		}
+		seedfile, err := os.Open("Elegant Hubris seeds.csv")
+		if err != nil {
+			panic(err)
+		}
+		csv_reader := csv.NewReader(seedfile)
+		data, err = csv_reader.ReadAll()
+		if err != nil {
+			panic(err)
+		}
+		// Scan the lines of notablefile
+		scanner = bufio.NewScanner(notablefile)
 	}
-	seedfile, err := os.Open("Lethal pride seeds.csv")
-	if err != nil {
-		panic(err)
-	}
-	csv_reader := csv.NewReader(seedfile)
-	data, err := csv_reader.ReadAll()
-	if err != nil {
-		panic(err)
-	}
-	// Scan the lines of notablefile
-	scanner := bufio.NewScanner(notablefile)
 	for scanner.Scan() {
 		notable = scanner.Text() // Scan the words of notables
 		// Trim non-alphanumeric characters
@@ -97,7 +135,14 @@ func main() {
 				}
 				// Search the processedString in the data
 				// Search the processedString in the Lethal pride seeds.csv file
-				for i := 0; i < 20000; i++ {
+				var appendamount int
+				if decoderoption == 1 {
+					appendamount = 30000
+				}
+				if decoderoption == 2 {
+					appendamount = 170000
+				}
+				for i := 0; i < appendamount; i++ {
 					// Append dummy value to mapping2d
 					mapping2d = append(mapping2d, make(mapping))
 				}
@@ -127,7 +172,7 @@ func main() {
 	for i := range mapping2d {
 		for jewel := range mapping2d[i] {
 			if mapping2d[i][jewel] >= 3 {
-				fmt.Fprintf(file, "%d,%d\n", i)
+				fmt.Fprintf(file, "%d", i)
 				// 	Print to console
 				fmt.Println(i, mapping2d[i][jewel])
 			}
